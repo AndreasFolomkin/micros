@@ -1,0 +1,21 @@
+docker-compose -f compose-env.yaml up       --starting DB container postges
+compose --version
+docker rm -f $(docker ps | grep 5444)         --delete container on port 5444
+grablew clean build
+docker-compose -f compose-env.yaml up -d      ---starting in demon mod
+http://localhost:8080/swagger-ui/index.html    /v3/api-docs    ---entryPoint Swagger
+docker run -ti --rm -e DATASOURSE_HOST=172.30.48.1 0539226016/cats-api:1.0.0
+docker run -ti --rm -e DATASOURSE_HOST=172.30.48.1 -p 8081:8080  0539226016/cats-api:1.0.0
+kind create cluster --config kind-config.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml  --NGINX PLAGIN
+kubectl apply -f k8s/deployment.yaml      --using my config k8s/deployment
+kubectl get pods --watch     ---smotret kak pods works in runtime
+kubectl delete pods --all
+kubectl delete deployments --all
+kubectl port-forward cats-api-7f87cf475d-vcl2k 8899:8080
+kubectl apply -f k8s/service.yaml
+kubectl get service
+
+
+

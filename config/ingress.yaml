@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: andrei
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /cats-api
+            backend:
+              service:
+                name: cats-api
+                port:
+                  number: 80
+
